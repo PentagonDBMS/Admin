@@ -137,7 +137,7 @@ const StudentList = () => {
     );
 
     if (response.ok) {
-      setStudents(students.filter((student) => student.student_id !== id));
+      setStudents(students.filter((student) => student.students_or_externals_id !== id));
     } else {
       // Handle errors
     }
