@@ -147,30 +147,56 @@ const StudentList = () => {
     return <Loader active>Loading Students...</Loader>;
   }
 
+  // <div
+  //   style={{
+  //     width: "100%",
+  //     display: "flex",
+  //     justifyContent: "space-between",
+  //     alignItems: "center",
+  //   }}
+  // >
+  //   <Button primary icon labelPosition="left" as={Link} to="/admins/add">
+  //     <Icon name="user plus" />
+  //     Create Admin
+  //   </Button>
+  //   {!isMobile && (
+  //     <Input
+  //       style={{ float: "right" }}
+  //       icon="search"
+  //       placeholder="Search admins..."
+  //       onChange={(e) => setSearchTerm(e.target.value)}
+  //     />
+  //   )}
+  // </div>;
+
   return (
     <div>
       <Header as="h1" textAlign="center" style={{ margin: "20px 0" }}>
         Students
       </Header>
       <Divider />
-      <Button primary icon labelPosition="left" as={Link} to="/students/add">
-        <Icon name="user plus" />
-        Create Student
-      </Button>
       <div
         style={{
+          width: "100%",
           display: "flex",
-          justifyContent: "flex-end",
-          marginTop: "10px",
-          marginBottom: "10px",
+          justifyContent: "space-between",
+          alignItems: "center",
         }}
       >
-        <Input
-          icon="search"
-          placeholder="Search students..."
-          onChange={(e) => setSearchTerm(e.target.value)}
-        />
+        <Button primary icon labelPosition="left" as={Link} to="/students/add">
+          <Icon name="user plus" />
+          Create Student
+        </Button>
+        {!isMobile && (
+          <Input
+            style={{ float: "right" }}
+            icon="search"
+            placeholder="Search students..."
+            onChange={(e) => setSearchTerm(e.target.value)}
+          />
+        )}
       </div>
+      <Divider hidden />
       {filteredStudents.length > 0 ? (
         <List divided animated size={isMobile ? "large" : "massive"}>
           {filteredStudents.map((student) => (

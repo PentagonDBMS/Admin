@@ -148,24 +148,51 @@ const AdminList = () => {
     return <Loader active>Loading Admins...</Loader>;
   }
 
+  // <Header as='h1' textAlign='center' style={{ margin: '20px 0' }}>
+  //                 Events
+  //             </Header>
+  //             <div style={{ width: '100%', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+  //                 <Button primary icon labelPosition='left' as={Link} to='/events/add'>
+  //                     <Icon name='calendar plus' />
+  //                     Create Event
+  //                 </Button>
+  //                 {!isMobile && (
+  //                     <Input
+  //                         icon='search'
+  //                         placeholder='Search events...'
+  //                         onChange={e => setSearchTerm(e.target.value)}
+  //                     />
+  //                 )}
+  //
+
   return (
     <div>
       <Header as="h1" textAlign="center" style={{ margin: "20px 0" }}>
         Admins
       </Header>
       <Divider />
-      <Button primary icon labelPosition="left" as={Link} to="/admins/add">
-        <Icon name="user plus" />
-        Create Admin
-      </Button>
-      <div style={{ marginTop: "10px", marginBottom: "10px", float: "right" }}>
-        <Input
-          style={{ float: "right" }}
-          icon="search"
-          placeholder="Search admins..."
-          onChange={(e) => setSearchTerm(e.target.value)}
-        />
+      <div
+        style={{
+          width: "100%",
+          display: "flex",
+          justifyContent: "space-between",
+          alignItems: "center",
+        }}
+      >
+        <Button primary icon labelPosition="left" as={Link} to="/admins/add">
+          <Icon name="user plus" />
+          Create Admin
+        </Button>
+        {!isMobile && (
+          <Input
+            style={{ float: "right" }}
+            icon="search"
+            placeholder="Search admins..."
+            onChange={(e) => setSearchTerm(e.target.value)}
+          />
+        )}
       </div>
+      <Divider hidden />
       {filteredAdmins.length > 0 ? (
         <List divided animated size={isMobile ? "large" : "massive"}>
           {filteredAdmins.map((admin) => (

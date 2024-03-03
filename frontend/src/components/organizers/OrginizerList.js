@@ -175,24 +175,28 @@ const OrganizerList = () => {
         Organizers
       </Header>
       <Divider />
-      <Button primary icon labelPosition="left" as={Link} to="/organizers/add">
-        <Icon name="user plus" />
-        Create Organizer
-      </Button>
       <div
         style={{
+          width: "100%",
           display: "flex",
-          justifyContent: "flex-end",
-          marginTop: "10px",
-          marginBottom: "10px",
+          justifyContent: "space-between",
+          alignItems: "center",
         }}
       >
-        <Input
-          icon="search"
-          placeholder="Search organizers..."
-          onChange={(e) => setSearchTerm(e.target.value)}
-        />
+        <Button primary icon labelPosition="left" as={Link} to="/organizers/add">
+          <Icon name="user plus" />
+          Create Organizer
+        </Button>
+        {!isMobile && (
+          <Input
+            style={{ float: "right" }}
+            icon="search"
+            placeholder="Search organizers..."
+            onChange={(e) => setSearchTerm(e.target.value)}
+          />
+        )}
       </div>
+      <Divider hidden />
       {filteredOrganizers.length > 0 ? (
         <List divided animated size={isMobile ? "large" : "massive"}>
           {filteredOrganizers.map((organizer) => (

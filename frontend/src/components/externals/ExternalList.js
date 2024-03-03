@@ -155,24 +155,28 @@ const ExternalList = () => {
         Externals
       </Header>
       <Divider />
-      <Button primary icon labelPosition="left" as={Link} to="/externals/add">
-        <Icon name="user plus" />
-        Create External
-      </Button>
       <div
         style={{
+          width: "100%",
           display: "flex",
-          justifyContent: "flex-end",
-          marginTop: "10px",
-          marginBottom: "10px",
+          justifyContent: "space-between",
+          alignItems: "center",
         }}
       >
-        <Input
-          icon="search"
-          placeholder="Search externals..."
-          onChange={(e) => setSearchTerm(e.target.value)}
-        />
+        <Button primary icon labelPosition="left" as={Link} to="/externals/add">
+          <Icon name="user plus" />
+          Create External
+        </Button>
+        {!isMobile && (
+          <Input
+            style={{ float: "right" }}
+            icon="search"
+            placeholder="Search externals..."
+            onChange={(e) => setSearchTerm(e.target.value)}
+          />
+        )}
       </div>
+      <Divider hidden />
       {filteredExternals.length > 0 ? (
         <List divided animated size={isMobile ? "large" : "massive"}>
           {filteredExternals.map((external) => (
