@@ -73,7 +73,7 @@ const AdminHeader = () => {
             </Dropdown.Menu>
           </Dropdown>
         )}
-        <Menu.Item as={Link} to="/dashboard">
+        <Menu.Item as={Link} to="https://pentagondbms.github.io/UniveristyFest/">
           <Image
             src={logo}
             alt="logo"
