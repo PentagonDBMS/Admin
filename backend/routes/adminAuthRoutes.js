@@ -144,7 +144,7 @@ router.post('/login', loginLimiter, [
                 secure: true,
                 sameSite: 'None',
                 maxAge: 18000000,
-            }).json({ adminId: admin.admin_id });
+            }).json({ adminId: admin.admin_id , name: admin.name});
         });
     } catch (err) {
         console.error(err.message);
