@@ -141,14 +141,7 @@ const AdminHeader = () => {
             >
               <Icon name="sign in" /> Login
             </Menu.Item>
-            // <Menu.Item
-            //   as={Link}
-            //   to="/register"
-            //   name="register"
-            //   active={activeItem === "register"}
-            // >
-            //   <Icon name="signup" /> Register
-            // </Menu.Item>
+           
           </Menu.Menu>
         )}
         {currentUser && (
